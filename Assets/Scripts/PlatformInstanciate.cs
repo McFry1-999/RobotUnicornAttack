@@ -36,4 +36,13 @@ public void InstantiatePlatforms (int amount)
 }
 
 }
+
+public void Restart()
+{
+    foreach(Transform child in transform)
+    {
+        Destroy(child.gameObject);
+    }
+    Start();
+}
 }
