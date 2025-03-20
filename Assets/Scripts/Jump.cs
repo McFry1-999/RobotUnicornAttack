@@ -35,6 +35,8 @@ public class Jump : MonoBehaviour
     public void SetCanJump(bool value)
     {
         canJump = value;
+        RestartJumps();
+        isGrounded = true;  
     }
 
     private void RestartJumps()

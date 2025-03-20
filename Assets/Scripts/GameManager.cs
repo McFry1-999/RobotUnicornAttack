@@ -9,19 +9,33 @@ public class GameManager : MonoBehaviour
      private UnityEvent onRespawnGame;
 
     [SerializeField]
-    private float secondtoRespawn = 3f;
+    private UnityEvent onFinishGame;
+
+    [SerializeField]
+    private float secondstoRestart = 3f;
+
+    [SerializeField]
+    private float finalsecondstoRestart = 5f;
+
     void Start()
     {
         onGameStart?.Invoke();
     }
 
-    public void PlayerLose()
+    public void RespawnGame()
     {
-        Invoke(nameof(RestartGame), secondtoRespawn);
+        Invoke("RestartGame",secondstoRestart);
     }
 
-    public void RestartGame()
+    public void FinishGame()
+    {
+        onFinishGame?.Invoke();
+        Invoke("Start", finalsecondstoRestart);
+        Invoke("RestartGame", finalsecondstoRestart);
+    }
+     public void RestartGame()
     {
         onRespawnGame?.Invoke();
     }
+
 }
