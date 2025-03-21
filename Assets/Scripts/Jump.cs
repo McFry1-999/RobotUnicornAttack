@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Jump : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Jump : MonoBehaviour
 
     private bool canJump = true;
 
+    [SerializeField]
+    public UnityEvent _Animation;
+
 
 
     private void Start()
@@ -49,6 +53,7 @@ public class Jump : MonoBehaviour
 
         if(!canJump)
         {
+            SoundManager.instance.Play("Jump");
             return;
         }
         buttonpressed = true;
@@ -59,6 +64,8 @@ public class Jump : MonoBehaviour
             JumptimeCounter = maxJumpTime;
             rb.linearVelocity = Vector3.up * jumpForce;
             isGrounded = false;
+            _Animation?.Invoke();
+
         }
     }
 
@@ -81,6 +88,8 @@ public class Jump : MonoBehaviour
             {
                 rb.linearVelocity = Vector3.up * (jumpForce + jumpBoost);
                 JumptimeCounter -= Time.deltaTime;
+                _Animation?.Invoke();
+
             }
             else
             {

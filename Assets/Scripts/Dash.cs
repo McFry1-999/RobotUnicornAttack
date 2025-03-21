@@ -32,6 +32,7 @@ public class Dash : MonoBehaviour
     {
         if(!isDashing && canDash && DashEnabled)
         {
+            SoundManager.instance.Play("whoosh");
             canDash = false;
             onDash?.Invoke();
             isDashing = true;
