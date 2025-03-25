@@ -13,27 +13,37 @@ private Transform platformsPosition;
 
 private int initialPlatforms = 10;
 private  float offsetPositionX = 0f;
+private int platformIndex = 0;
+
+[SerializeField]
+private float  distanceBetweenPlatforms = 2;     
+[SerializeField]
+private List<GameObject> safePlatform;
 
 private void Start()
 {
     offsetPositionX = 0;
     InstantiatePlatforms(initialPlatforms);
+    platformIndex= 0;
 }
-public void InstantiatePlatforms (int amount)
-{
-    for (int i = 0; i < amount; i++)
-{
-    int randomIndex = Random.Range(0, platforms.Count);
-    if(offsetPositionX !=0)
+    public void InstantiatePlatforms(int amount)
     {
-        offsetPositionX += platforms[randomIndex].GetComponent<BoxCollider>().size.x * 0.5f;
+        for(int i = 0; i < amount; i++)
+        {
+            List<GameObject> platformsToUse = platformIndex < 2 ? safePlatform : this.platforms;
+            int randomIndex = Random.Range(0, platformsToUse.Count);
+            if(offsetPositionX != 0)
+            {
+                offsetPositionX += platformsToUse[randomIndex].GetComponent<BoxCollider>().size.x * 0.5f;
+            }
+            GameObject platform = Instantiate(platformsToUse[randomIndex], Vector3.zero, Quaternion.identity);
+            offsetPositionX += distanceBetweenPlatforms + platform.GetComponent<BoxCollider>().size.x * 0.5f;
+            platform.transform.SetParent(transform);
+            platform.transform.localPosition = new Vector3(offsetPositionX, 0,0);
+            platformIndex++;
+        }
     }
-    GameObject platform = Instantiate (platforms [randomIndex], new Vector3(offsetPositionX, platformsPosition.position.y, platformsPosition.position.z), Quaternion.identity);
-    offsetPositionX += platform.GetComponent<BoxCollider>().size.x * 0.5f;
-    platform.transform.SetParent(transform);
-}
 
-}
 
 public void Restart()
 {

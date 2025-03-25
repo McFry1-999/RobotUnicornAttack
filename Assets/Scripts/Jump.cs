@@ -16,6 +16,12 @@ public class Jump : MonoBehaviour
     [SerializeField]
     private int maxJumps = 2;
 
+    [SerializeField]
+    private UnityEvent onJump;
+
+     [SerializeField]
+    private UnityEvent onLand;
+
     private int Jumps;
 
     private Rigidbody rb;
@@ -53,12 +59,12 @@ public class Jump : MonoBehaviour
 
         if(!canJump)
         {
-            SoundManager.instance.Play("Jump");
             return;
         }
         buttonpressed = true;
         if (isGrounded || Jumps > 0)
         {
+            onJump?.Invoke();
             Jumps --;
             isJumping = true;
             JumptimeCounter = maxJumpTime;
@@ -104,6 +110,7 @@ public class Jump : MonoBehaviour
         {
             RestartJumps();
             isGrounded = true;
+            onLand?.Invoke();
         }
     }
 }
