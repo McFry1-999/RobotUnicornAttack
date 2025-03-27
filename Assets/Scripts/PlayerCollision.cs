@@ -10,6 +10,13 @@ public class PlayerCollision : MonoBehaviour
 
     private Dash dash;
 
+    [SerializeField]
+    private UnityEvent <Transform> onObstacleDestroyed;
+
+     [SerializeField]
+    private UnityEvent <Transform> onCollisionDie;
+
+
     private void Start()
     {
         dash = GetComponent<Dash>();
@@ -21,10 +28,12 @@ public class PlayerCollision : MonoBehaviour
         {
             if(dash.IsDashing)
             {
+                onObstacleDestroyed?.Invoke(transform);
                 Destroy(collision.gameObject);
             }
             else
             {
+                onCollisionDie?.Invoke(transform);
                 OnPlayerLose?.Invoke();
             }
         }
@@ -35,6 +44,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.CompareTag("DeadZone"))
         {
+            onCollisionDie?.Invoke(transform);
             OnPlayerLose?.Invoke();
         }
     }
