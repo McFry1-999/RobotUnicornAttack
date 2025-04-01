@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8611523573093555093}
   - component: {fileID: 4630780574507002687}
+  - component: {fileID: -3669910128058001006}
   m_Layer: 0
   m_Name: ObstacP
   m_TagString: Untagged
@@ -54,6 +55,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.23, y: 1, z: 5.74}
   m_Center: {x: 0, y: -0.74, z: 0}
+--- !u!114 &-3669910128058001006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4943611159796841192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34242b14be20a044b1534c8365bfad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2956073270876303491
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1897097349623968415}
   - component: {fileID: 3457662779886280775}
+  - component: {fileID: 1776866766496267370}
   m_Layer: 0
   m_Name: DoublePlat
   m_TagString: DeadZone
@@ -55,6 +56,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 16.31, y: 1, z: 11.22}
   m_Center: {x: 0, y: -4.73, z: 0}
+--- !u!114 &1776866766496267370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007833292441213187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34242b14be20a044b1534c8365bfad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1651425525382139245
 PrefabInstance:
   m_ObjectHideFlags: 0

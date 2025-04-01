@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698628877391470815}
   - component: {fileID: 2266683776815304330}
+  - component: {fileID: 6280196040233380979}
   m_Layer: 0
   m_Name: Invader
   m_TagString: DeadZone
@@ -54,6 +55,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.92, y: 1, z: 6.4}
   m_Center: {x: 0, y: -1.49, z: 0}
+--- !u!114 &6280196040233380979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764622434602030736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34242b14be20a044b1534c8365bfad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3128702010530673876
 PrefabInstance:
   m_ObjectHideFlags: 0
