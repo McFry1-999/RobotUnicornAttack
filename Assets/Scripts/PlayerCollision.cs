@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,9 +14,11 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private UnityEvent <Transform> onObstacleDestroyed;
 
-     [SerializeField]
+    [SerializeField]
     private UnityEvent <Transform> onCollisionDie;
 
+    [SerializeField]
+    private UnityEvent OnCoinCollected;
 
     private void Start()
     {
@@ -29,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
             if(dash.IsDashing)
             {
                 onObstacleDestroyed?.Invoke(transform);
-                Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
             }
             else
             {
@@ -46,6 +49,11 @@ public class PlayerCollision : MonoBehaviour
         {
             onCollisionDie?.Invoke(transform);
             OnPlayerLose?.Invoke();
+        }
+        else if (other.CompareTag("Coin"))
+        {
+            other.gameObject.SetActive(false);
+            OnCoinCollected?.Invoke();
         }
     }
 

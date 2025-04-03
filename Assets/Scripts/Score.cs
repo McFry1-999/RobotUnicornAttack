@@ -31,6 +31,12 @@ private UnityEvent<int> onSetFinalScore;
 
   }
 
+  public void AddScore(int score)
+  {
+    currentScore += score;
+    onScoreChanged?.Invoke(currentScore);
+  }
+
   public void PlayerLose()
   {
     scores.Add(currentScore);
