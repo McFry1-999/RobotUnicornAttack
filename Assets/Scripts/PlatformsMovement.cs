@@ -36,7 +36,7 @@ public class PlatformsMovement : MonoBehaviour
         speed *= speedMultiplier;
     }
 
-     public void SpeedDown(float speedMultiplier)
+     public void SpeedDown()
     {
         speed = pastspeed;
     }
