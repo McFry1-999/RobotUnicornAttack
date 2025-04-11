@@ -20,7 +20,6 @@ public class SoundManager : MonoBehaviour
         }else if(instance != this){
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
         audioDictionary = new Dictionary<string,AudioClip>();
         foreach(string key in audioList){
             AudioClip audio = Resources.Load<AudioClip>("Audio/" + audioPrefix + key); 

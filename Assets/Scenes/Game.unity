@@ -570,6 +570,9 @@ MonoBehaviour:
   - Jump
   - whoosh
   - Punch
+  - Coin
+  - Cloc
+  - Smash
   audioS: {fileID: 1902792784}
   musicS: {fileID: 1025877670}
   masterMixer: {fileID: 0}
@@ -608,8 +611,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9c3218d3dc19bf64691d65b2070b5ba8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9c3218d3dc19bf64691d65b2070b5ba8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1327,6 +1330,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 240363771}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5000
+          m_FloatArgument: 0
+          m_StringArgument: Smash
+          m_BoolArgument: 0
+        m_CallState: 2
   onCollisionDie:
     m_PersistentCalls:
       m_Calls:
@@ -1391,6 +1406,18 @@ MonoBehaviour:
           m_IntArgument: 1000
           m_FloatArgument: 0
           m_StringArgument: +1  ZLOTY
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 240363771}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1000
+          m_FloatArgument: 0
+          m_StringArgument: Coin
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &391151854
@@ -2837,7 +2864,19 @@ MonoBehaviour:
   timerText: {fileID: 124485458}
   onSecondPassed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 240363771}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cloc
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &964342998
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,8 +3090,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9c3218d3dc19bf64691d65b2070b5ba8, type: 3}
-  m_Resource: {fileID: 8300000, guid: 9c3218d3dc19bf64691d65b2070b5ba8, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.484
   m_Pitch: 1
@@ -15568,6 +15607,18 @@ MonoBehaviour:
           m_StringArgument: Fade From White
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 240363774}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_pitch
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Fade From White
+          m_BoolArgument: 1
+        m_CallState: 2
   onFinishGame:
     m_PersistentCalls:
       m_Calls: []
@@ -15667,6 +15718,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 1
+          m_StringArgument: Punch
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 240363774}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_pitch
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
           m_StringArgument: Punch
           m_BoolArgument: 0
         m_CallState: 2
