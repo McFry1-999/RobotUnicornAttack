@@ -1931,7 +1931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1344533130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2970,9 +2970,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Robot Unicorn
+  m_Text: 'RUA
 
-    Attack'
+    POLISH COW VERSION'
 --- !u!222 &1878059793
 CanvasRenderer:
   m_ObjectHideFlags: 0
